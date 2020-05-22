@@ -68,21 +68,17 @@ function arr(line) {
 
   for (let i = 0; i < vars.length; i++) {
     if (vars[i] !== undefined && vars[i] !== "") {
-      
       if (vars[i] === "str") row += `    ` + `"string",\n`;
 
       if (vars[i] === "num") row += `    ` + `700,\n`;
 
       if (vars[i] === "bool") row += `    ` + "1,\n";
-      
       else {
-        console.log("what is ths ", localStorage.getItem(vars[i]))
         if (localStorage.getItem(vars[i]) !== undefined)
           if (addNestedObj(vars[i]) !== null) {
             const nestedObj = addNestedObj(vars[i]);
             const indexOfOpeningBrace = nestedObj.indexOf("{");
             const objInArr = addNestedObj(vars[i]).slice(indexOfOpeningBrace);
-            console.log("objest in arr ", objInArr);
             row += `    ` + objInArr;
           }
       }
