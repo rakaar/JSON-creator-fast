@@ -58,10 +58,6 @@ function myobj(line) {
   const customObj = obj(line);
   const customObjName = line.split(" ")[1];
   localStorage.setItem(customObjName, customObj);
-  console.log(
-    "testing saving custom types ",
-    localStorage.getItem(customObjName)
-  ); // remove
 }
 
 function arr(line) {
