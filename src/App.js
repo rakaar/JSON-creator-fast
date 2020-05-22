@@ -5,6 +5,8 @@ import { parse } from "./createjson";
 function App() {
   const [output, setOutput] = useState(``);
   function handleChange(e) {
+    if(e.target.value === ``)
+      localStorage.clear()
     const json = parse(e.target.value);
     setOutput(json);
   }
