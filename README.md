@@ -122,15 +122,19 @@ would result in
 
  ### I came across these questions in mind
 1. This is complicated, why would anyone use it? Why not have a UI tool instead?
+
 A. I built it for my personal purpose and I am not good at UI/UX things.
 
 2. Why always fill a default value like always "string" ?
+
 A. The idea behind building this was to save time in making JSONs. Why waste time in filling values
 
 3. Why a website in React?
+
 A. It is easy to build in React. And if its on web, its easy to access it rather than a CLI tool.
 
 4. The JSONs are horrible to look. Why not prettify them?
+
 A. Didn't find any API that does that. Will try to do soon. But does it matter 🤔
 
 
