@@ -68,11 +68,11 @@ function arr(line) {
 
   for (let i = 0; i < vars.length; i++) {
     if (vars[i] !== undefined && vars[i] !== "") {
-      if (vars[i] === "str") row += `    ` + `"string",\n`;
+      if (vars[i] === "str") row += `    "string",\n`;
 
-      if (vars[i] === "num") row += `    ` + `700,\n`;
+      if (vars[i] === "num") row += `    700,\n`;
 
-      if (vars[i] === "bool") row += `    ` + "1,\n";
+      if (vars[i] === "bool") row += `    1,\n`;
       else {
         if (localStorage.getItem(vars[i]) !== undefined)
           if (addNestedObj(vars[i]) !== null) {
