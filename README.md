@@ -1,68 +1,136 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# My personal tool to create JSONs faster to test REST APIs
 
-## Available Scripts
+Watch [this](https://drive.google.com/file/d/1e_3S6KDgrgFNDA87rKBhAMzQv4ONErlE/view) video 
+OR
+READ THIS ⤵️
+Here the idea is to provide type of value you want with key names to generate JSON
+For example you want a JSON of this kind
+`{ "name" : "kau", "age": 3 }`
 
-In the project directory, you can run:
+The above mentioned example requries a string field and a number field. To genertate that you would type
+```
+str name
+num age
+```
+The above would result in 
+```
+{
+ "name": "string",
+ "age": 7
 
-### `npm start`
+}
+```
+So these are the types and their respective default values
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+| Type          | Default       |
+| ------------- | ------------- |
+| str           | "string"      |
+| bool          | 1             |
+| num           | 7             |
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Suppose you want to include an object of something this sort in your JSON
+```
+{ "details" : { "name": "kau", "age" : 4 } }
+```
+Syntax would be
+```
+obj details str name num age
+```
+The output is 
+```
+{
+"details": {
+    "name": "string",
+    "age": 7
 
-### `npm test`
+}
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+}
+```
+Suppose you want an array will a 2 strings and 3 numbers inside
+The syntax would be
+```
+arr testarr str str num num num
+```
+The output would be 
+```
+{
+"testarr": [
+    "string",
+    "string",
+    700,
+    700,
+    700
 
-### `npm run build`
+]
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+}
+```
+Suppose you want a nested object
+By that I meant, you want include an *object inside an object* or an *object inside an array*
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Define your own type using `myobj` and use it inside an object
+For example
+```
+myobj me str name num age
+```
+the above syntax would create a object and would be stored in localstorage as
+```
+"me" : { "name": "string", "age": 7 }
+```
+To use it inside an object
+```
+obj kau str address myobj me
+```
+would result in 
+```
+{
+"kau": {
+    "address": "string",
+    "me": {
+    "name": "string",
+    "age": 7
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+}
 
-### `npm run eject`
+}
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+}
+```
+Similarly you can include in array in this way
+```
+arr testarr me me 
+```
+would result in
+```
+{
+	"testarr": [{
+			"name": "string",
+			"age": 7
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+		},
+		{
+			"name": "string",
+			"age": 7
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+		}
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+	]
 
-## Learn More
+}
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+ ### I came across these questions in mind
+1. This is complicated, why would anyone use it? Why not have a UI tool instead?
+A. I built it for my personal purpose and I am not good at UI/UX things.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Why always fill a default value like always "string" ?
+A. The idea behind building this was to save time in making JSONs. Why waste time in filling values
 
-### Code Splitting
+3. Why a website in React?
+A. It is easy to build in React. And if its on web, its easy to access it rather than a CLI tool.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+4. The JSONs are horrible to look. Why not prettify them?
+A. Didn't find any API that does that. Will try to do soon. But does it matter 🤔
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
