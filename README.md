@@ -1,8 +1,11 @@
 # My personal tool to create JSONs faster to test REST APIs
 
 Watch [this](https://drive.google.com/file/d/1e_3S6KDgrgFNDA87rKBhAMzQv4ONErlE/view) video 
+
 OR
+
 READ THIS ⤵️
+
 Here the idea is to provide type of value you want with key names to generate JSON
 For example you want a JSON of this kind
 `{ "name" : "kau", "age": 3 }`
