@@ -124,7 +124,7 @@ would result in
 ```
 
  ### I came across these questions in mind
-### 1. This is complicated, why would anyone use it? Why not have a UI tool instead?
+### 1. This is unfriendly to use, why would anyone use it? Why not have a UI tool instead?
 
 I built it for my personal purpose and I am not good at UI/UX things.
 
@@ -138,6 +138,6 @@ It is easy to build in React. And if its on web, its easy to access it rather th
 
 ### 4. The JSONs are horrible to look. Why not prettify them?
 
-Didn't find any API that does that. Will try to do soon. But does it matter 🤔
+Didn't find any API that does that. But does it matter 🤔
 
 
